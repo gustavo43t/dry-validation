@@ -116,7 +116,7 @@ module Dry
         template = messages[rule] || messages[predicate, msg_opts]
 
         unless template
-          raise MissingMessageError, "message for #{predicate} was not found"
+          raise MissingMessageError, "message for #{predicate} was not found. Rule:#{rule} Path:#{path};"
         end
 
         text = message_text(rule, template, tokens, options)
